@@ -5,7 +5,7 @@ public class Test {
 	}
 	private static void testBasicStrategy() {
 		String path = "tests/test";
-		for (int i = 1; i < 3; i++) {
+		for (int i = 1; i <= 10; i++) {
 			System.out.println("TEST " + i + "\n");
 			String fileName = path + i + ".txt";
 			BasicStrategy bs = new BasicStrategy(fileName);
