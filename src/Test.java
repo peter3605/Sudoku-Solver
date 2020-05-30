@@ -9,10 +9,10 @@ public class Test {
 			System.out.println("TEST " + i + "\n");
 			String fileName = path + i + ".txt";
 			BasicStrategy bs = new BasicStrategy(fileName);
+			bs.solve();
 			System.out.println("Test" + i + " grid is:");
 			bs.printGrid();
 			System.out.println();
-			bs.solve();
 			System.out.println("Basic Strategy produced the solution:");
 			bs.printSolution();
 			System.out.println();
