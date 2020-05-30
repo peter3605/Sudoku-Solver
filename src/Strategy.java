@@ -68,7 +68,7 @@ public abstract class Strategy {
 	}
 	
 	/*
-	 * Validates a specific position on the solution grid
+	 * Validates a specific row/col on the solution grid
 	 */
 	public boolean validate(int row, int col) {
 		HashSet<Integer> set = new HashSet<>();
@@ -109,6 +109,32 @@ public abstract class Strategy {
 	    set.clear();
 	 
 	    return true;
+	}
+	
+	/*
+	 * Validates a specific value in a specific row/col on the grid
+	 */
+	public boolean validate(int row, int col, int val) {
+		boolean check = true;
+		for (int i = 0; i < 9; i++) {
+			if (this.solution[row][i] == val) 
+				check = false;
+		}
+		for (int i = 0; i < 9; i++) {
+			if (this.solution[i][col] == val)
+				check = false;
+		}
+		
+		row = row - row % 3;
+		col = col - col % 3;
+		
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (this.solution[row + 1][col + j] == val)
+					check = false;
+			}
+		}
+		return check;
 	}
 	
 	/*
