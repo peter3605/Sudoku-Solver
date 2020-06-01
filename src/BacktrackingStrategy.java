@@ -7,7 +7,11 @@ public class BacktrackingStrategy extends Strategy{
 	BacktrackingStrategy(int[][] grid) {
 		super(grid);
 	}
-
+	
+	/*
+	 * Tries every possible value in each position and if it gets to a point where there is no possible solution then
+	 * it recursively backtracks
+	 */
 	public boolean solve() {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
